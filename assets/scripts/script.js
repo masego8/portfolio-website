@@ -1,3 +1,5 @@
+console.log("script.js loaded successfully!");
+
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".project a").forEach(link => {
         link.addEventListener("mouseover", () => {
