@@ -19,8 +19,3 @@ Welcome to my personal portfolio website! This is a showcase of my skills, proje
 - **Frontend:** HTML, CSS (Bootstrap, Custom Styling)
 - **Icons & Fonts:** FontAwesome, Google Fonts
 - **Deployment:** GitHub Pages
-
-## 🔧 How to Run Locally
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/masego8/portfolio.git
