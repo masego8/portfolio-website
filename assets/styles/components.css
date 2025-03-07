@@ -1,0 +1,205 @@
+/* 🔘 Buttons */
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background: white;
+    transform: scale(1.05);
+}
+
+/* 🔹 Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Name */
+.name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Intro */
+.intro {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    max-width: 650px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* 🔹 Tech Stack Section */
+.tech-stack2 {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.tech-stack2 h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* 🔹 Tech Icons */
+.stack-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensures proper spacing on smaller screens */
+    gap: 20px;
+}
+
+/* 🔹 Default Icon Styling */
+.stack-icons i {
+    font-size: 2.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* 🔹 Individual Icon Colors */
+.stack-icons .fa-html5 { color: #E34F26; } /* HTML - Orange */
+.stack-icons .fa-css3-alt { color: #1572B6; } /* CSS - Blue */
+.stack-icons .fa-js-square { color: #F7DF1E; } /* JavaScript - Yellow */
+.stack-icons .fa-python { color: #3776AB; } /* Python - Blue */
+.stack-icons .fa-java { color: #007396; } /* Java - Dark Blue */
+.stack-icons .fa-react { color: #61DBFB; } /* React - Light Blue */
+
+
+/* 🔹 Hover Effect */
+.stack-icons i:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+
+/* Navigation */
+.nav-links {
+    margin-top: 30px;
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color2);
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+
+
+
+/* Back to Home */
+.back-to-home {
+    text-align: left;
+    margin-left: 90px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.back-to-home a {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--text-color2);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-to-home a:hover {
+    color: var(--primary-color);
+}
+
+/* 📜 CV Button */
+.cv-button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cv-button:hover {
+    background: var(--text-color2);
+    transform: scale(1.05);
+}
+
+.cv-header {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* 🔹 CV Container Styling */
+.cv-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 🔹 CV Embed (PDF or iframe) */
+.cv-container iframe {
+    width: 100%;
+    height: 700px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 🔹 Contact Page Links */
+.contact-info a {
+    color: var(--primary-color); /* Change to your preferred color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--text-color2); /* Change hover color */
+    text-decoration: underline;
+}

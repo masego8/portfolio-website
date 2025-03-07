@@ -1,0 +1,19 @@
+/* 🎨 Color Palette */
+:root {
+    --background-color: #181818; /* Carbon Black */
+    --primary-color: #ffff00; /* Bright Red */
+    --secondary-color: #222222; /* Dark Gray */
+    --hover-color: #FF7373; /* Lighter Red Hover */
+    --text-color: #EDEDED; /* Soft White */
+    --text-color2: silver; /* Soft Gray-Blue */
+    --pill-color: transparent; /* Red Pills */
+    --project-color: #2B2B2B; /* Darker Gray */
+}
+
+
+/* 🌐 Font Settings */
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Projects</title>
+    <meta name="description" content="Portfolio of Masego Mathibako, a software developer passionate about problem-solving, ethical hacking, and full-stack development.">
+    <meta name="keywords" content="Masego Mathibako, software developer, portfolio, web development, ethical hacking">
+    <meta name="author" content="Masego Mathibako">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/favicon.ico">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script defer src="/assets/scripts/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Separated CSS Files -->
+    <link rel="stylesheet" href="assets/styles/theme.css">      <!-- Colors & fonts -->
+    <link rel="stylesheet" href="assets/styles/main.css">       <!-- Global styles -->
+    <link rel="stylesheet" href="assets/styles/components.css"> <!-- Buttons, cards, layout -->
+    <link rel="stylesheet" href="assets/styles/animations.css"> <!-- Keyframes, effects -->
+    <link rel="stylesheet" href="assets/styles/projects.css">    <!-- Projects page styles -->
+</head>
+<body>
+
+    <!-- Back to Home -->
+    <div class="back-to-home">
+        <a href="index.html">← Back to Home</a>
+    </div>
+
+    <!-- Header -->
+    <header class="projects-header">
+        <h1>My Projects</h1>
+        <p>Here are some of the projects I've worked on.</p>
+    </header>
+
+
+    <!-- Project Category Pills -->
+    <div class="project-categories">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" id="software-tab" onclick="loadCategory('projects/software-projects.html', 'software-tab')">Software Development</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="hacking-tab" onclick="loadCategory('projects/hacking-projects.html', 'hacking-tab')">Ethical Hacking</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="hardware-tab" onclick="loadCategory('projects/hardware-projects.html', 'hardware-tab')">Hardware</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Dynamic Content Container -->
+    <div id="project-content">
+        <!-- Projects will be loaded here dynamically -->
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+/* 📌 Projects Page Container */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* 🎨 Project Cards */
+.project-card {
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 5px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🖼 Project Image */
+.project-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* 🌟 Hover Effect */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(31, 111, 235, 0.3);
+}
+
+/* 🛠 Project Tech Stack Icons */
+.tech-stack {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.tech-stack i {
+    font-size: 22px;
+    color: var(--primary-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tech-stack i:hover {
+    transform: scale(1.2);
+    color: white;
+}
+
+/* 🔗 Project Links */
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.project-links a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    background: var(--secondary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.project-links a i {
+    font-size: 16px;
+}
+
+.project-links a:hover {
+    background: var(--primary-color);
+    color: black;
+    transform: scale(1.05);
+}
+
+/* 🔹 Project Category Pills */
+.project-categories {
+    text-align: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.nav-pills {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background: transparent;
+    padding: 12px;
+    border-radius: 50px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.nav-pills .nav-link {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: transparent;
+    padding: 12px 22px;
+    border-radius: 25px;
+    position: relative; /* Required for underline animation */
+    transition: color 0.3s ease;
+}
+
+/* ✨ Underline Animation (Matches Main Nav) */
+.nav-pills .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Adjust spacing from text */
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-pills .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-pills .nav-link:hover::after {
+    width: 100%;
+}
+
+/* 🔹 Active Pill - Always Underlined */
+.nav-pills .nav-link.active {
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.nav-pills .nav-link.active::after {
+    width: 100%; /* Always visible underline */
+}
+
+
+
+
+/* Page Header */
+.projects-header, .contact-header, .cv-header {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.projects-header h1, .contact-header h1, .cv-header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+/* Project Grid */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Individual Project Cards */
+.project {
+    background: var(--project-color);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid var(--primary-color);
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    color: var(--text-color2);
+    margin-bottom: 10px;
+    color: --text-color;
+}
+
+.project p {
+    font-size: 1rem;
+    color: var(--text-color2);
+    line-height: 1.5;
+}
+
+
+
+/* Project Image */
+.project img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+

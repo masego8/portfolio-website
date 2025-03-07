@@ -1,0 +1,68 @@
+/* 🎭 Background Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 📜 Fade-in Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply Animations */
+.hero .name {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.hero .intro {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards 0.5s;
+}
+
+/* ✨ Button Hover Animation */
+.button:hover {
+    transform: scale(1.08);
+}
+
+/* Underline Animation */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* 🔹 Cursor Blinking Animation */
+#typed-text::after {
+    content: "|";
+    display: inline-block;
+    margin-left: 4px;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+

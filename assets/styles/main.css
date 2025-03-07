@@ -1,0 +1,27 @@
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Smooth Gradient Background */
+body {
+    background: linear-gradient(-45deg, var(--background-color), #1A1A1A, #232323, var(--secondary-color));
+    background-size: 200% 200%;
+    animation: gradientMove 12s infinite alternate;
+}
+
+
+/* 📱 Responsive Adjustments */
+@media (max-width: 900px) {
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}
