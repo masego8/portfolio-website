@@ -1,0 +1,134 @@
+/* 📱 Mobile-Only Styles */
+@media (max-width: 768px) {
+    
+    /* Adjust overall spacing */
+    body {
+        padding: 10px;
+    }
+
+    /* 🔹 Reduce Header Font Sizes */
+    .name {
+        font-size: 2.5rem; /* Reduce name size */
+        text-align: center;
+    }
+
+    .intro {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    /* 🔹 Navigation - Centered & Stacked */
+    .nav-links {
+        display: flex;
+        flex-direction: column; /* Stack links */
+        text-align: center;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+    }
+
+    /* 🔹 Adjust Tech Stack Icons */
+    .tech-stack2 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .stack-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .stack-icons i {
+        font-size: 22px; /* Adjust icon size */
+    }
+    /* 🔹 Horizontal Scrolling with One Project at a Time */
+    .projects-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Allow side scrolling */
+        scroll-snap-type: x mandatory; /* Smooth scroll snap */
+        padding: 20px;
+        gap: 20px;
+        -webkit-overflow-scrolling: touch; /* Smooth mobile scrolling */
+        justify-content: flex-start;
+    }
+
+    /* 🔹 Ensure Each Project Fills the Screen */
+    .project {
+        min-width: 90vw; /* Adjusted to fit within the viewport */
+        max-width: fit-content;
+        flex: 0 0 auto; /* Prevent shrinking */
+        scroll-snap-align: center; /* Centers the projects properly */
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* 🔹 Hide Scrollbar */
+    .projects-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* 🔹 Adjust Project Title */
+    .project h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    /* 🔹 Adjust Description */
+    .project p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* 🔹 Center Buttons */
+    .project-links {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+
+    .pagination-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px; /* Moves dots closer to the heading */
+        position: relative;
+        z-index: 10;
+    }
+    
+    /* Default dot appearance */
+    .dot {
+        width: 8px;
+        height: 8px;
+        background: var(--text-color2);
+        border-radius: 50%;
+        transition: all 0.3s ease-in-out;
+    }
+    
+    /* Active dot (indicates current project) */
+    .dot.active {
+        width: 12px;
+        height: 12px;
+        background: var(--primary-color);
+    }
+
+    
+
+    /* 🔹 CV Container - Full Width */
+    .cv-container iframe {
+        width: 100%;
+        height: 550px;
+    }
+
+    /* 🔹 Ensure No Horizontal Scrolling */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
