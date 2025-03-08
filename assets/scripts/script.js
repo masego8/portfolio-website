@@ -1,4 +1,4 @@
-console.log("script.js loaded successfully!");
+
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".project a").forEach(link => {
@@ -38,47 +38,75 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Load Category Pill
+// Check if we're on the projects page before running loadCategory
 function loadCategory(page, activeTabId, category) {
+    const projectContent = document.getElementById("project-content");
+    if (!projectContent) {
+        return;
+    }
+
     fetch(page)
         .then(response => response.text())
         .then(data => {
-            document.getElementById("project-content").innerHTML = data;
-            console.log(`✅ Loaded ${category} projects`);
+            projectContent.innerHTML = data;
 
             // Ensure pagination initializes AFTER content loads
             setTimeout(() => {
-                console.log(`🔄 Initializing pagination for ${category}`);
-                initializePagination(category);
+                if (typeof initializePagination === "function") {
+                    initializePagination(category);
+                } else {
+                    console.warn("⚠️ initializePagination function is not available.");
+                }
             }, 300);
         });
 
-    // Update active class for pills
-    document.getElementById("software-tab").classList.remove("active");
-    document.getElementById("hacking-tab").classList.remove("active");
-    document.getElementById("hardware-tab").classList.remove("active");
+    // Check if tab elements exist before modifying them
+    const softwareTab = document.getElementById("software-tab");
+    const hackingTab = document.getElementById("hacking-tab");
+    const hardwareTab = document.getElementById("hardware-tab");
+    const extraTab = document.getElementById("extra-tab");
 
-    document.getElementById(activeTabId).classList.add("active");
+    if (softwareTab && hackingTab && hardwareTab && extraTab) {
+        softwareTab.classList.remove("active");
+        hackingTab.classList.remove("active");
+        hardwareTab.classList.remove("active");
+        extraTab.classList.remove("active");
+
+        document.getElementById(activeTabId).classList.add("active");
+    }
 }
 
-// Load Software Projects by default on page load
+// Only run on the projects page
 window.onload = function() {
-    setTimeout(() => {
-        loadCategory('projects/software-projects.html', 'software-tab', 'software');
-    }, 200);
+    const projectPage = document.getElementById("project-content");
+    if (projectPage) {
+        setTimeout(() => {
+            loadCategory('projects/software-projects.html', 'software-tab', 'software');
+        }, 200);
+    } else {
+        
+    }
 };
 
 
+
+// Pagination
+
+// Pagination for dynamically loaded projects
 document.addEventListener("DOMContentLoaded", function () {
     function initializePagination(category) {
         setTimeout(() => {
-            if (!category) return; // 🚀 Skip if no category is provided
+            if (!category) return; // Skip if no category is provided
 
-            const projectsContainer = document.querySelector(`#${category}-container`);
-            const dotsContainer = document.querySelector(`#${category}-pagination`);
+            // Select dynamically loaded elements
+            const projectsContainer = document.querySelector("#project-content .projects-container");
+            const dotsContainer = document.querySelector("#project-content .pagination-dots");
             const dots = dotsContainer ? dotsContainer.querySelectorAll(".dot") : [];
 
-            if (!projectsContainer || dots.length === 0) return; // 🚀 Skip if no projects or dots exist
+            if (!projectsContainer || dots.length === 0) {
+                console.warn(`⚠️ No projects or pagination dots found for ${category}.`);
+                return;
+            }
 
             function updateActiveDot() {
                 let index = Math.round(projectsContainer.scrollLeft / projectsContainer.clientWidth);
@@ -87,63 +115,76 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             }
 
+            // Reset previous event listeners before adding new ones
             projectsContainer.removeEventListener("scroll", updateActiveDot);
             projectsContainer.addEventListener("scroll", updateActiveDot);
 
             dots.forEach((dot, i) => {
-                dot.removeEventListener("click", () => {}); // Ensure no duplicate event listeners
-                dot.addEventListener("click", () => {
-                    projectsContainer.scrollTo({
-                        left: i * projectsContainer.clientWidth,
-                        behavior: "smooth"
-                    });
-                });
+                dot.removeEventListener("click", scrollToProject); // Remove old listener
+                dot.addEventListener("click", scrollToProject);
             });
 
+            function scrollToProject(event) {
+                const dotIndex = Array.from(dots).indexOf(event.target);
+                projectsContainer.scrollTo({
+                    left: dotIndex * projectsContainer.clientWidth,
+                    behavior: "smooth"
+                });
+            }
+
+            // Ensure pagination starts correctly
+            projectsContainer.scrollLeft = 0;
             updateActiveDot();
         }, 500);
     }
 
     function loadCategory(page, activeTabId, category) {
-        if (!category) return; // 🚀 Skip execution if category is missing
+        const projectContent = document.getElementById("project-content");
+        if (!projectContent) return; // Stop execution if we’re not on the projects page
 
         fetch(page)
             .then(response => response.text())
             .then(data => {
-                document.getElementById("project-content").innerHTML = data;
+                projectContent.innerHTML = data;
                 setTimeout(() => {
-                    initializePagination(category); // 🚀 Initialize pagination after content loads
-                }, 300);
+                    initializePagination(category); //Initialize pagination after content loads
+                }, 500);
             })
-            .catch(error => console.error(`❌ Error loading ${category}:`, error));
+            .catch(error => console.error(`Error loading ${category}:`, error));
 
-        // Update active class for pills
-        document.getElementById("software-tab").classList.remove("active");
-        document.getElementById("hacking-tab").classList.remove("active");
-        document.getElementById("hardware-tab").classList.remove("active");
+        // Update active tab
+        ["software-tab", "hacking-tab", "hardware-tab", "extra-tab"].forEach(id => {
+            const tab = document.getElementById(id);
+            if (tab) tab.classList.remove("active");
+        });
 
-        document.getElementById(activeTabId).classList.add("active");
+        document.getElementById(activeTabId)?.classList.add("active");
     }
 
-    // Make `initializePagination` globally accessible
-    window.initializePagination = initializePagination;
+    // Only run script if the project page exists
+    const projectPage = document.getElementById("project-content");
+    if (projectPage) {
+        window.initializePagination = initializePagination;
 
-    // Load Software Projects by default on page load
-    setTimeout(() => {
-        loadCategory('projects/software-projects.html', 'software-tab', 'software');
-    }, 200);
+        // Load Software Projects by default on page load
+        setTimeout(() => {
+            loadCategory('projects/software-projects.html', 'software-tab', 'software');
+        }, 200);
 
-    // Attach click events to the pills
-    document.getElementById("software-tab").addEventListener("click", () => {
-        loadCategory('projects/software-projects.html', 'software-tab', 'software');
-    });
-    document.getElementById("hacking-tab").addEventListener("click", () => {
-        loadCategory('projects/hacking-projects.html', 'hacking-tab', 'hacking');
-    });
-    document.getElementById("hardware-tab").addEventListener("click", () => {
-        loadCategory('projects/hardware-projects.html', 'hardware-tab', 'hardware');
-    });
+        // Attach event listeners to category pills
+        ["software", "hacking", "hardware", "extra"].forEach(category => {
+            const tabId = `${category}-tab`;
+            const tab = document.getElementById(tabId);
+            if (tab) {
+                tab.addEventListener("click", () => {
+                    loadCategory(`projects/${category}-projects.html`, tabId, category);
+                });
+            }
+        });
+    }
 });
+
+
 
 
 
