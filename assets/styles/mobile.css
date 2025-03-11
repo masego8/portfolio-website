@@ -6,6 +6,10 @@
         padding: 10px;
     }
 
+    .back-to-home {
+        margin-left: 0;
+    }
+
     /* 🔹 Reduce Header Font Sizes */
     .name {
         font-size: 2.5rem; /* Reduce name size */
@@ -115,7 +119,7 @@
     .dot.active {
         width: 12px;
         height: 12px;
-        background: var(--primary-color);
+        background: var(--accent-color);
     }
 
     

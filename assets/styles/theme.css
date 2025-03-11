@@ -1,13 +1,18 @@
 /* 🎨 Color Palette */
 :root {
-    --background-color: #181818; /* Carbon Black */
-    --primary-color: #ffff00; /* Bright Red */
-    --secondary-color: #222222; /* Dark Gray */
-    --hover-color: #FF7373; /* Lighter Red Hover */
-    --text-color: #EDEDED; /* Soft White */
-    --text-color2: silver; /* Soft Gray-Blue */
-    --pill-color: transparent; /* Red Pills */
-    --project-color: #2B2B2B; /* Darker Gray */
+    --background-color: #121212; /* Almost Black */
+
+    --primary-color: #2D9CDB; /* Soft Cyan */
+    --secondary-color: #444444; /* Darker Gray */
+    --accent-color: #2D9CDB; /* Orange Pop */
+
+    --text-color: #EAEAEA; /* White */
+    --text-color2: #aaaaaa; /* Light Gray */
+
+    --pill-color: rgba(255, 255, 255, 0.1); /* Subtle White Transparency */
+    --project-color: #1e1e1e; /* Dark Gray */
+    
+
 }
 
 

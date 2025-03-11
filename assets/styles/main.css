@@ -7,11 +7,19 @@ body {
 
 /* Smooth Gradient Background */
 body {
-    background: linear-gradient(-45deg, var(--background-color), #1A1A1A, #232323, var(--secondary-color));
+    background: var(--background-color);
+
     background-size: 200% 200%;
     animation: gradientMove 12s infinite alternate;
 }
 
+header {
+    margin-top: 0px;
+    background-color: var(--secondary-color);
+    color: var(--text-color2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 40px 20px;
+}
 
 /* 📱 Responsive Adjustments */
 @media (max-width: 900px) {

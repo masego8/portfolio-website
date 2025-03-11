@@ -1,19 +1,6 @@
-/* 🔘 Buttons */
-.button {
-    display: inline-block;
-    padding: 12px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: black;
-    background-color: var(--primary-color);
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
 
-.button:hover {
-    background: white;
-    transform: scale(1.05);
-}
+
+
 
 /* 🔹 Navigation Links */
 .nav-links {
@@ -71,12 +58,6 @@
     text-align: center;
 }
 
-.tech-stack2 h2 {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
 
 /* 🔹 Tech Icons */
 .stack-icons {
@@ -99,6 +80,18 @@
 .stack-icons .fa-python { color: #3776AB; } /* Python - Blue */
 .stack-icons .fa-java { color: #007396; } /* Java - Dark Blue */
 .stack-icons .fa-react { color: #61DBFB; } /* React - Light Blue */
+.stack-icons .fa-node-js { color: #68A063; } /* Node.js - Green */
+
+
+.tech-stack .fa-html5 { color: #E34F26; } /* HTML - Orange */
+.tech-stack .fa-css3-alt { color: #1572B6; } /* CSS - Blue */
+.tech-stack .fa-js-square { color: #F7DF1E; } /* JavaScript - Yellow */
+.tech-stack .fa-python { color: #3776AB; } /* Python - Blue */
+.tech-stack .fa-java { color: #007396; } /* Java - Dark Blue */
+.tech-stack .fa-react { color: #61DBFB; } /* React - Light Blue */
+.tech-stack .fa-node-js { color: #68A063; } /* Node.js - Green */
+.tech-stack .fa-database { color: #00758F; } /* Database - Dark Cyan */
+
 
 
 /* 🔹 Hover Effect */
@@ -117,13 +110,20 @@
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color2);
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
     transition: color 0.3s ease;
+}
+
+.section-divider {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    margin: 20px auto;
+    border-radius: 2px;
 }
 
 
@@ -140,14 +140,60 @@
 .back-to-home a {
     text-decoration: none;
     font-size: 18px;
-    color: var(--text-color2);
+    color: var(--text-color);
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .back-to-home a:hover {
-    color: var(--primary-color);
+    color: var(--accent-color);
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 40%;
+    margin: 20px auto;
+    max-width: 450px; /* Prevents it from getting too wide on large screens */
+}
+
+
+form input, form textarea {
+    padding: 12px;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background: #1a1a1a; /* Dark background */
+    color: white;
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--accent-color); /* Highlight on focus */
+    outline: none;
+}
+
+
+form button {
+    background: var(--primary-color);
+    color: black;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    border-radius: 5px;
+}
+
+form button:hover {
+    background: var(--accent-color);
+    transform: scale(1.05);
+}
+
+
 
 /* 📜 CV Button */
 .cv-button {
@@ -163,7 +209,7 @@
 }
 
 .cv-button:hover {
-    background: var(--text-color2);
+    background: var(--accent-color);
     transform: scale(1.05);
 }
 
@@ -191,15 +237,20 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-/* 🔹 Contact Page Links */
-.contact-info a {
-    color: var(--primary-color); /* Change to your preferred color */
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+.contact-info {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 2rem;
 }
 
-.contact-info a:hover {
-    color: var(--text-color2); /* Change hover color */
-    text-decoration: underline;
+/* 🔹 Contact Page Links */
+.contact-info p {
+    font-size: 2rem;
+    margin: 10px 0;
 }
+
+.contact-info i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
